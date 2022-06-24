@@ -25,6 +25,8 @@ jobs:
         run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/database:${{ env.DATABASE_TAG }} --target database .
       - name: Push the database image
         run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/database:${{ env.DATABASE_TAG }}
+      - name: Upload dependencies
+        uses: actions/upload-artifact@v2
         with:
           name: Backend
           path: |
