@@ -3,8 +3,8 @@ build:
 	make service
 
 .PHONY: service
-api_server:
-	go build -o bin/service -v ./cmd/service
+service:
+	go build -o ./bin/service -v ./cmd/service
 
 .PHONY: remove_containers
 remove_containers:
