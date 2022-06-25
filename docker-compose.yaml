@@ -2,7 +2,7 @@ version: '3'
 
 services:
   database:
-    image: tullerpeton/database:${API_DB_TAG}
+    image: tullerpeton/database:${DATABASE_TAG}
     restart: unless-stopped
     environment:
       - POSTGRES_HOST_AUTH_METHOD=trust
@@ -13,7 +13,7 @@ services:
   service:
     depends_on:
       - database
-    image: tullerpeton/service:${API_SERVER_TAG}
+    image: tullerpeton/service:${SERVICE_TAG}
     container_name: service
     restart: unless-stopped
     ports:
